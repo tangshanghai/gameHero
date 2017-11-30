@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 22.5px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QQ星</title>
+    <link rel="stylesheet" href="./css/game_common.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/score.js"></script>
+    <script src="js/gameCore.js"></script>
+</head>
+<body>
+    <div class="start_page home">
+        <div class="start_logo">
+            <img src="./images/game_name.png"/>
+        </div>
+        <div class="start_btn imgContainer">
+            <img  src="./images/btn_start.png">
+        </div>
+
+        <div class="rule_tag rule_btn">
+            <img src="./images/btn_tag.png">
+        </div>
+
+        <div class="game_sm">
+            <div class="game_sm_img">
+                <img src="./images/game_sm.png"/>
+                <div class="sm_close"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="game_page">
+        <div class="backfill_panel">
+            <div class="music">
+                <img src="images/music.png">
+                <img src="images/music_close.png">
+            </div>	
+            <audio class="backgroundMusic" loop="" preload="preload" src="music/background_music.mp3"></audio>
+            <audio class="cowsound" preload="preload" src="music/cow_lost.mp3"></audio>
+        </div>
+
+        <div class="game_explain">
+            <img src="images/game_explain.png">
+        </div>
+       <!--  <div id="game_score">
+            <div id="score_dis">>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div> -->
+
+        <div class="game_score">
+            <div class="score_dis">20ML</div>
+        </div>
+        
+
+        <div id="game_content">
+            <div class="boy"></div>
+            <div class="stick"></div>
+            <div class="column1">
+                <div class="gold gold_a"></div>
+                <div class="gold gold_d"></div>
+            </div>
+            <div class="column2">
+                <div class="gold gold_a"></div>
+                <div class="gold gold_d"></div>
+            </div>
+        </div>
+
+        <div class="prompt_lost">
+            <div class="lost_logo">
+                <img src="./images/game_goon_logo.png">
+                <div class="prompt_score">
+                    <div class="line_score1">获得50ml</div>
+                    <div class="line_score2">需要达到195ML才可以领取奖品哦</div>
+                </div>
+            </div>
+            <div class="goon_btn">
+                <img src="./images/game_goon_btn.png">
+            </div>
+        </div>
+
+        <div class="prompt_win">
+            <div class="dis_box">
+                <div class="win_time">201711251033</div>
+                <div class="alert">截图保留领取奖品</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var $start_page = $(".start_page");
+        var $game_page = $(".game_page");
+        var $startBtn = $(".start_btn");
+        var $sm_close = $(".game_sm .sm_close");
+        // var $bgmusic = $("#backgroundMusic");
+        // var $musicBtn = $(".music");
+        // var score = new MyScore($("#score_dis"),$);
+        var gameCore = new GameCore($("#game_content"),$,{
+            scoreDis:$(".game_page .score_dis"),
+            promptLost:$(".prompt_lost"),
+            promptWin:$(".prompt_win"),
+            bgmusic:$(".game_page .backgroundMusic"),
+            cowsound:$(".game_page .cowsound"),
+            musicBtn:$(".game_page .music"),
+            explain:$(".game_page .game_explain")
+        });
+
+        $game_page.hide();
+        $(".game_sm").hide();
+        // console.log( $musicBtn.find("img"))
+        // $($musicBtn.find("img")[1]).hide();
+        $startBtn.on("click",function(){
+            $game_page.show();
+            $start_page.hide();
+            // $(".prompt_lost").hide();
+            // $(".prompt_win").hide();
+            // console.log($bgmusic)
+            // $bgmusic[0].play();
+            gameCore.startGame();
+            gameCore.playBg(true);
+        });
+
+        $(".rule_btn").on("click",function(){
+            $(".game_sm").show();
+        })
+
+        $sm_close.on("click",function(){
+            $(".game_sm").hide();
+        });
+
+        // $(".prompt_lost .goon_btn").on("click",function(){
+        //     $(".prompt_lost").hide();
+        //     // gameCore.startGame();
+        // })
+
+        
+
+        // $musicBtn.on("click",function(){
+        //     if($bgmusic[0].paused){
+        //         $bgmusic[0].play();
+        //         $($musicBtn.find("img")[0]).show();
+        //         $($musicBtn.find("img")[1]).hide();
+        //     }else{
+        //         $bgmusic[0].pause();
+        //         $($musicBtn.find("img")[0]).hide();
+        //         $($musicBtn.find("img")[1]).show();
+        //     }
+        // })
+
+        // console.log(score)
+        // score.setScore(44);
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+@font-face {
+    font-family: 'comici'; 
+    src:url(../fonts/comici.ttf) format('truetype');
+}
+div {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+.start_page {
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-color: #FFF;
+    background-position: center top;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../images/game_bg.jpg);
+    background-size: cover;
+}
+
+.start_page img{
+    width: 100%;
+    height: auto;
+}
+
+.start_page .start_logo{
+    width: 13rem;
+    height: 12rem;
+    position: relative;
+    margin: 2rem auto;
+    animation: bounceInDown 1s ease 1;
+    -webkit-animation: bounceInDown 1s ease 1;
+    -moz-animation: bounceInDown 1s ease 1;
+    -o-animation: bounceInDown 1s ease 1;
+}
+.start_page .start_btn{
+    width: 10rem;
+    height: 3.7rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+
+    animation: tada .6s ease 1s 1 forwards;
+    -webkit-animation: tada .6s ease 1s 1 forwards;
+    -moz-animation: tada .6s ease 1s 1 forwards;
+    -o-animation: tada .6s ease 1s 1 forwards
+}
+
+.start_page .rule_tag {
+    width: 3.5rem;
+    height: 1.775rem;
+    margin: 0 auto;
+}
+
+.start_page .game_sm{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000004d
+}
+
+.start_page .game_sm .game_sm_img{
+    width: 90%;
+    height: auto;
+    margin: 2rem auto;
+}
+
+.start_page .game_sm .sm_close{
+    position: absolute;
+    right: 0.6rem;
+    top: 1.4rem;
+    width: 2rem;
+    height: 2rem;
+    /* background-color: #ff000047; */
+}
+
+.game_page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/game_bg.jpg);
+    z-index: 2;
+    background-size: cover;
+}
+
+.game_page img{
+    width: 100%;
+    height: auto;
+} 
+
+.game_page .backfill_panel{
+    width: 100%;
+    height: 2rem;
+    background-color:#61a76121;
+    position: relative;
+    z-index: 50;
+}
+
+.game_page .backfill_panel .music{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+}
+
+.game_page .backfill_panel .music img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.game_page .game_explain{
+    position: absolute;
+    top: 10rem;
+    width: 10rem;
+    height: 1.2rem;
+    left: 50%;
+    margin-left: -5rem;
+    animation: explain 1s infinite linear;
+    -webkit-animation: explain 1s infinite linear;
+    -moz-animation: explain 1s infinite linear;
+    -o-animation: explain 1s infinite linear;
+}
+
+.game_page .game_score{
+    position: relative;
+    z-index: 10;
+    top: 0;
+    width: 12rem;
+    height: 5.5rem;
+    margin: 0 auto;
+    background-image: url(../images/game_scorebg.png);
+    font-family: 'comici'; 
+}
+
+.game_page .game_score .score_dis{
+    position: absolute;
+    top: 2.2rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 1.3rem;
+    font-size: 0.7rem;
+    color: #0068b7;;
+    text-align: center;
+    line-height: 1.3rem;
+}
+
+.game_page .prompt_lost{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000004d;
+    z-index: 50;
+}
+
+.game_page .prompt_lost .lost_logo{
+    width: 13.5rem;
+    margin:3rem auto 2rem auto;
+    position: relative;
+}
+
+.game_page .prompt_lost .lost_logo .prompt_score{
+    position: absolute;
+    top: 8.5rem;
+    left: 50%;
+    margin-left: -4.2rem;
+    width: 8rem;
+    height: 1rem;
+    color: #000;
+    font-family: "黑体";
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.1rem;
+}
+
+.game_page .prompt_lost .goon_btn{
+    width: 10rem;
+    height: 3.7rem;
+    margin: 0 auto;
+}
+
+
+.game_page .prompt_win{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000004d;
+    background-image: url(../images/game_win.png);
+    z-index: 60;
+}
+
+.game_page .prompt_win .dis_box{
+    /* position: absolute;
+    top: 21rem; */
+    width: 12rem;
+    height: 2.3rem;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 0.8rem;
+    margin-top: 19rem;
+}
+
+.game_page .prompt_win .dis_box div{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.2rem;
+}
+
+
+/* #backfill_panel{
+    width: 100%;
+    height: 3rem;
+    background-color:#61a76121;
+    position: relative;
+    z-index: 50;
+}
+
+#backfill_panel .music{
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+}
+
+#backfill_panel .music img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#game_score{
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    background-image:url(../images/score_bg.png);
+    z-index: 60;
+}
+#game_score #score_dis{
+    width: 6rem;
+    height: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+}
+#score_dis span{
+    display: inline-block;
+    margin-right: -15px;
+    margin-top: 5px;
+    width: 40px;
+    height: 40px;
+    background-image:url(../images/score.png);
+} */
+
+#game_content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 255, 255, 0.432); */
+    z-index: 0;
+    font-family: "comici"
+}
+#game_content .boy{
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    bottom: 10rem;
+    left: 0;
+    background-image: url(../images/boy.png);
+    z-index: 20;
+}
+#game_content .stick{
+    width: 0.1rem;
+    height: 0rem;
+    position: absolute;
+    bottom: 10rem;
+    left: 2rem;
+    background-color: #0068b7;
+    transform: rotate(0deg);
+    transform-origin: left bottom;
+}
+#game_content .column1{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2rem;
+    height: 10rem;
+    background-color: #0068b7;
+}
+
+#game_content .column2{
+    position: absolute;
+    left: 12rem;
+    bottom: 0;
+    width: 2rem;
+    height: 10rem;
+    background-color: #0068b7;
+}
+
+#game_content .gold{
+    position: absolute;
+    left: 50%;
+    top: -1.8rem;
+    margin-left: -1rem;
+    width: 2rem;
+    height: 2rem;
+    display: none;
+}
+
+#game_content .gold_a{
+    background-image: url(../images/gold_a.png);
+}
+
+#game_content .gold_d{
+    background-image: url(../images/gold_d.png);
+}
+
+
+@-moz-keyframes tada {
+    0% {
+        -moz-transform: scale3d(1,1,1)
+    }
+
+    10%,20% {
+        -moz-transform: scale3d(.9,.9,.9) rotate3d(0,0,1,-3deg)
+    }
+
+    30%,50%,70%,90% {
+        -moz-transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg)
+    }
+
+    40%,60%,80% {
+        -moz-transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg)
+    }
+
+    100% {
+        -moz-transform: scale3d(1,1,1)
+    }
+}
+
+@-o-keyframes tada {
+    0% {
+        -o-transform: scale3d(1,1,1)
+    }
+
+    10%,20% {
+        -o-transform: scale3d(.9,.9,.9) rotate3d(0,0,1,-3deg)
+    }
+
+    30%,50%,70%,90% {
+        -o-transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg)
+    }
+
+    40%,60%,80% {
+        -o-transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg)
+    }
+
+    100% {
+        -o-transform: scale3d(1,1,1)
+    }
+}
+
+@-webkit-keyframes tada {
+    0% {
+        -webkit-transform: scale3d(1,1,1)
+    }
+
+    10%,20% {
+        -webkit-transform: scale3d(.9,.9,.9) rotate3d(0,0,1,-3deg)
+    }
+
+    30%,50%,70%,90% {
+        -webkit-transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg)
+    }
+
+    40%,60%,80% {
+        -webkit-transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg)
+    }
+
+    100% {
+        -webkit-transform: scale3d(1,1,1)
+    }
+}
+
+@keyframes tada {
+    0% {
+        transform: scale3d(1,1,1)
+    }
+
+    10%,20% {
+        transform: scale3d(.9,.9,.9) rotate3d(0,0,1,-3deg)
+    }
+
+    30%,50%,70%,90% {
+        transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg)
+    }
+
+    40%,60%,80% {
+        transform: scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg)
+    }
+
+    100% {
+        transform: scale3d(1,1,1)
+    }
+}
+
+@-webkit-keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000px)
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translateY(30px)
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px)
+    }
+
+    100% {
+        -webkit-transform: translateY(0)
+    }
+}
+
+@-moz-keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -moz-transform: translateY(-2000px)
+    }
+
+    60% {
+        opacity: 1;
+        -moz-transform: translateY(30px)
+    }
+
+    80% {
+        -moz-transform: translateY(-10px)
+    }
+
+    100% {
+        -moz-transform: translateY(0)
+    }
+}
+
+@-o-keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -o-transform: translateY(-2000px)
+    }
+
+    60% {
+        opacity: 1;
+        -o-transform: translateY(30px)
+    }
+
+    80% {
+        -o-transform: translateY(-10px)
+    }
+
+    100% {
+        -o-transform: translateY(0)
+    }
+}
+
+@keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000px)
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translateY(30px)
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px)
+    }
+
+    100% {
+        -webkit-transform: translateY(0)
+    }
+}
+
+
+@-webkit-keyframes explain {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes explain {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes explain {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes explain {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
